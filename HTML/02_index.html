@@ -1,0 +1,86 @@
+<!-- コメント ショートカットはcontrol / -->
+<!--
+複数行コメント 改行することもできる
+ -->
+
+ <!-- HTML5を示すタグ -->
+<!DOCTYPE html>
+
+<!-- HTMLを書きます。 -->
+<!-- 属性はこのサイトが”日本語”という意味の『lang="ja"』 -->
+<html lang="jp">
+    <!-- ここからはヘッダーという意味　/headまで -->
+<head>
+    <!-- この文書データはutf-8（文字コード）で書かれているの意味。（SEO対策、ブラウザ自動認識） -->
+    <meta charset="UTF-8">
+    <!-- サイトのスケーリング解像度の変更ができるintial scale、1.0だとそのまま表示される。2.0になると2倍になる -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- サイト説明 -->
+    <meta name="description" content="このmetaタグは,このページの説明を入れる">
+    <!-- サイトの検索キーワード、入れるとひっかかるようになる -->
+    <meta name="keywords" content="テストページ、説明、サンプル。">
+    <!-- リンクタグ　ファイルを参照したいときに使う。 -->
+    <!-- CSSファイル -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ファビコン　ブックマークした時のアイコン（タブの名前） -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSSをHTMLに埋め込むときに使うタグ -->
+    <style></style>
+
+    <!-- scriptをHTMLに埋め込むときに使うタグ -->
+    <script></script>
+
+    <!-- サイトのタイトル（タブの名前） -->
+    <title>INDEX</title>
+</head>
+
+<body>
+    <!-- ヘッダーブロック　ヘッダーブロックを考えてデザインすることをブロックデザイン -->
+    <header>
+        <h1>ハローワールド</h1>
+
+    </header>
+    <!-- メインブロック -->
+    <main>
+    <p>段落タグ</p>
+    <p>スパン<span>タグ</span></p>
+    </main>
+    <!-- サイドブロック -->
+    <aside>
+        <!-- ナビゲーションタグ -->
+        <nav>
+            <!-- 番号なしリスト -->
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+
+            </ul>
+        </nav>
+            <!-- 番号ありリスト -->
+            <ol>    
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ol>  
+    </aside>
+    <!-- フッターブロック -->
+    <footer>
+        <!-- 画像タグ ITではオルトと読む、音楽ではアルト これは相対パス-->
+        <img src="img/img01.png" alt="代替画像">
+        <img src="img/cats.jpg" alt="代替画像" width="200px">
+        相対パス
+        <!-- 絶対パス　Cドライブから表したもの -->
+
+    </footer>
+</body>
+</html>
