@@ -1,0 +1,98 @@
+/* ヘッダーのスタイル */
+header{
+    /* 内余白 */
+    padding: 10px;
+    /* 外余白 */
+    margin: 20px 100px ;
+    /* 背景色 */
+    background-color: antiquewhite;
+    a {
+        text-decoration: none;
+      }
+}
+
+div#main-container{
+    /* 内余白 */
+    padding: 10px;
+    /* 外余白 */
+    margin: 10px;
+    background-color: rgb(170, 137, 137);
+    /* 子供のサイズの自動調整 */
+    display: flex;
+}
+
+nav#link-list{
+    padding: 10px;
+    margin: 20px 100px ;
+    background-color: rgb(241, 203, 203);
+}
+
+/* > は、子結合しという */
+nav#link-list > ul{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin-left: 20px;
+  }
+
+
+
+/* メインのスタイル */
+main{
+    /* ブロックを浮かせて右に寄せる */
+    /* float: right; */
+    padding: 10px;
+    margin: 10px auto;
+/* スペースで区切ることで各辺の指定ができる。 */
+
+    /* 横幅 */
+    width: 100%;
+
+    /* 背景色 */
+    background-color: lavender;
+}
+
+article{
+    background-color: rgb(197, 151, 187);
+}
+
+section{
+    background-color: rgb(170, 169, 204);
+}
+
+aside{
+    /* ブロックを浮かせて右に寄せる */
+    /* float: right; */
+     /* 内余白 */
+     padding: 10px;
+     /* 外余白 */
+     margin: 10px;
+     width: 200px;
+    background-color: rgb(233, 216, 216);
+    /* 非表示 */
+    display: none;
+}
+
+footer{
+    clear: left;
+     /* 内余白 */
+     padding: 10px;
+     /* 外余白 */
+     margin: 10px;
+    background-color: antiquewhite;
+}
+
+@media screen and (min-width: 450px){
+    aside{
+        display: block;
+    }
+}
+
+
+@media screen and (mini-width: 1250px) {
+    main{
+        width: 1000px;
+    }
+}
