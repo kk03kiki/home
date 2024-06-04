@@ -17,7 +17,10 @@ function calcs1() {
  function calcs4() {
     result.textContent = Number(num1.value) / Number(num2.value)
  }
+ fun
  function calcs5() {
     result.textContent = Number(num1.value) % Number(num2.value)
  }
 
+
+//  HTMLから引っ張ってくるときはすべて文字なので、数字として扱うときはNunber（）を付ける
