@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャットもどき</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header >チャットもどき</header>
+    <main></main>
+
+        <!-- チャット欄 -->
+        <div>
+            <ul id="result">
+            </ul>
+        </div>
+
+        <!-- 入力欄 -->
+        <div>
+            <input type="text" id="chatbx" >
+        </div>
+
+        <!-- ボタン -->
+        <!-- input button(text等)ボタンができる。valueは値（ボタンの名前） -->
+        <!-- onclick ="自分で関数を指定(戻り値)" -->
+        <div>
+            <input type="button" value="Aさん" onclick="msg(ppA)" id="Asan">
+            <input type="button" value="Bさん" onclick="msg(ppB)" id="Bsan">
+            <input type="button" value="リセット" onclick="reset()" id="reset">
+            <!-- reset関数は一つしかないので、（）内記入しなくていい -->
+        </div>
+
+
+
+
+    </main>
+
+    
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
