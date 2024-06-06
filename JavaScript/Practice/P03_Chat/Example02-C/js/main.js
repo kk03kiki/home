@@ -26,11 +26,13 @@ function sendMessage(name){
     // 現在の時刻の取得
     let now = new Date()
     // 日本の形式の時刻表示に変換
+    // ja-JPは決まっている
     let nowf = now.toLocaleString('ja-JP');
+
     // タグ生成
     let inputStr = 
 `<dt class='${className}'>
-    ${now} : ${dispName}
+    ${nowf} : ${dispName}
 </dt>
 <dd class='${className}'>
     ${input.value}
