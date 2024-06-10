@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画面遷移</title>
+</head>
+<body>
+    <!-- ただnext.htmlを開くだけ -->
+    <a href="next.html">next</a>
+
+    <!-- next.htmlにかきくけこを送信する -->
+    <!-- ？変数を「next.html」に代入。『？　+ 定数指定する』 -->
+     <!-- 「index.html」→「next.html」→「main.js」の順にget(情報を送信)される -->
+    <a href="next.html?msg=かきくけこ">next(かきくけこ送信)</a>
+
+
+<!-- methodは特定の処理をまとめたプログラムのこと。 -->
+<!-- 「index.html」→「next.html」表示（表示方法は、「main.js」で処理）されて、next.indexにget(情報を送信)される） -->
+ indexが一覧、nextが従業員の詳細、
+    <form action="next.html" method="get">
+        <input type="text" name="msg">
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
