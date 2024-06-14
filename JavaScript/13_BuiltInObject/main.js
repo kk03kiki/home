@@ -4,7 +4,7 @@
 let output = document.getElementById('output')
 
 // Mathオブジェクト　→　計算を行うオブジェクト
-// randは乱数の略
+// randは乱数の略 random
 // Math.floorは小数点以下切り捨て
 
 // maxを使用の場合
@@ -33,8 +33,11 @@ output.innerHTML += '日付型' + '<br>'
 // 月は０が１月になる。０から数える！！
 // 曜日も０から数える
 // ｐ161
+
+// toLocaleStringは、時計を出す　（曜日　月　日　の順番）
 let today = new Date()
 output.innerHTML += today + '<br>'
+
 // 日本でよく使われる形式に変換
 output.innerHTML += today.toLocaleString('ja-JP') + '<br>'
 
