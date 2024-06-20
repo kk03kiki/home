@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品詳細画面</title>
+</head>
+
+<body>
+    <!-- 一つのクリックした商品の情報を表示する
+（商品名と値段、画像、説明を大きく表示する。）
+カートに入れるボタン⇛カートにデータを追加 -->
+
+
+    <div id="output"></div>
+    <!-- 「window.location.href」jsで画面を遷移する方法→遷移するURLを貼る。→indexにもどる -->
+    <input type="button" value="戻る" onclick="window.location.href = 'index.html'">
+    <input type="button" value="買い物かごへ" id="addToShoppingBag" onclick="window.location.href = 'index.html'">
+
+    <script type="module" src="../JS/detail.js"></script>
+</body>
+
+</html>
