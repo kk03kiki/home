@@ -9,6 +9,7 @@ inputStr = input("整数を入力してください。\n>")
 # 例外処理
 try:
     # 例外が発生する可能性のある処理
+    # →　文字列から数字へ
     inputInt = int(inputStr)
     print(inputInt + 100)
 except:
@@ -20,12 +21,12 @@ try:
     # 例外が発生する可能性のある処理
     inputInt = int(inputStr)
     print(100 / inputInt)
- # ターミナルからコピー
+ # エラー名はターミナルからコピー（ValueError）
 except ValueError:
     # 例外が発生した時(整数変換失敗)の処理
     print("整数を入力してください。")
     # エラーの名前を付けたい場合は
-    print(ex.args)
+    # print(ex.args)
 except ZeroDivisionError:
     # 例外が発生した時(0割エラー)の処理
     print("0で割らないでください。")

@@ -71,6 +71,7 @@ arr01.clear()
 print(arr01)
 
 # for文と組み合わせ
+# ループ（何回繰り返すか）
 arr01 = ["A","B","C","D","E"]
 
 for element in arr01:
@@ -79,7 +80,15 @@ else:
     print("出力完了")
 
 
+# 別
+for count in range(2):
+    print("おはよう")
+    print("さよなら")
+
+
+
 # while文と組み合わせ
+# →　whileはTrueである限り回り続ける。ifを入れないと永遠にループしてしまう
 print("-- while文と組み合わせ --")
 while True:
     if len(arr01) == 0:
@@ -87,5 +96,6 @@ while True:
     elif len(arr01) == 1:
         print(arr01.pop(0))
     else:
+        # 上記elifに当てはまらない場合に動く（必ず記入しなくてもよい）
         print(arr01.pop(0),end=",")
 

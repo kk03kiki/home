@@ -9,7 +9,7 @@ int01 = 123
 print(int01)
 
 # データ型の表示
-# →　　typeは方の出力？
+# →　　typeは型の出力？
 print(type(int01))
 print(type(10))
 
