@@ -10,6 +10,7 @@ con = sqlite3.connect("InputOutput/Person.db")
 
 # # テーブル生成
 # # SQLをテキストで準備
+# →　一度実行したので、コメントアウトしている
 # sql = "CREATE TABLE person(id,name,gender,age)"
 # # SQL実行
 # con.execute(sql)
