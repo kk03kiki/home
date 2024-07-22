@@ -1,0 +1,15 @@
+{% set title = "Template Sample" %}
+{% set subTitle = "結果ページ" %}
+{% extends 'layouts/layout.html' %}
+
+{% block head %}{% endblock %}
+
+{% block header %}
+{% include 'blocks/header.html' %}
+{% endblock %}
+{% block contents %}
+    <h2>結果：{{ans}}</h2>
+{% endblock %}
+{% block footer %}
+{% include 'blocks/footer.html' %}
+{% endblock %}

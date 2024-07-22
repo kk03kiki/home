@@ -1,0 +1,38 @@
+{% set title = "Template Sample" %}
+{% set subTitle = "メインメニュー" %}
+{% extends 'layouts/layout.html' %}
+
+{% block head %}{% endblock %}
+
+{% block header %}
+{% include 'blocks/header.html' %}
+{% endblock %}
+{% block contents %}
+<form action="{{ url_for('result') }}">
+    <div>
+        <input type="number" name="num1" required>
+        <input type="number" name="num2" required>
+    </div>
+    <div>
+        <button type="submit" name="op" value="add">加算</button>
+        <button type="submit" name="op" value="minus">減算</button>
+        <button type="submit" name="op" value="multi">乗算</button>
+        <button type="submit" name="op" value="divide">除算</button>
+    </div>
+    {% if errid %}
+        <div style="color: red;">
+            {% if errid == "E001" %}
+                入力エラー：整数を入れてください。
+            {% elif errid == "E002" %}
+                演算エラー：0で割れません。
+            {% elif errid == "E003" %}
+                演算子エラー
+            {% endif %}
+
+        </div>
+    {% endif %}
+</form>
+{% endblock %}
+{% block footer %}
+{% include 'blocks/footer.html' %}
+{% endblock %}

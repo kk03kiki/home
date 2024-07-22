@@ -19,3 +19,5 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5001)
     # コマンドで実行される場合は(ポート番号は何でもいい例:5001)
     # flask --app app run -h 0.0.0.0 -p 5001 --debugger --reload
+
+    
