@@ -8,9 +8,8 @@ app.secret_key = b"hit"
 @app.route("/",methods=["GET","POST"])
 def input():
     form = InputForm()
-
     # POST
-    # →　サブミットが押されたとき、あっているかチェック（validate）するという意味
+    # →　サブミットが押されたとき、あっているかチェック（vali date）するという意味
     if form.validate_on_submit():
         session['name'] = form.name.data
         session['email'] = form.email.data
@@ -21,12 +20,13 @@ def input():
         form.name.data = session['name']
     if 'email' in session:
         form.email.data = session['email']
-    # レンダーtemplate　HTMLを読み込む準備をする
+    
     return render_template("pages/input.html",form=form)
 
 @app.route("/output",methods=["GET","POST"])
 def output():
     return render_template("pages/output.html")
+
 if __name__ == "__main__":
     # デバッグモード
     app.debug = True
