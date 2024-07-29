@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MethodBase</title>
+</head>
+
+<body>
+    <!-- url _ for引数指定 -->
+    <!-- pos tの場合method必要（ゲットは不要） -->
+    <form action="{{url_for('LoginSystem.login')}}" method="post">
+        <div>
+            ID:<input type="text name=" name="id" id="">
+        </div>
+        <div>
+            パスワード：<input type="password" name="pw" id="">
+        </div>
+        <button type="submit">送信</button>
+    </form>
+</body>
+
+</html>
