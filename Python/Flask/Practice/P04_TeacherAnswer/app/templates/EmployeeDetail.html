@@ -12,60 +12,49 @@
     {% endif %}
 </head>
 <body>
-    
     {% if data %}
-    <!-- 定義 -->
         {% set name = data.name %}
         {% set age = data.age %}
         {% set genderSelect = data.genderSelect %}
         {% set deptSelect = data.deptSelect %}
         {% set btnName = '更新' %}
     {% else %}
-        { #空の場合は’’で送る #}
         {% set name = '' %}
         {% set age = '' %}
         {% set genderSelect = ['','',''] %}
         {# deptSelectはmain.pyから送られてくる。 #}
         {% set btnName = '新規登録' %}
     {% endif %}
-
-    {% 空の時は、登録せずに終了する処理 #}
-        {% 新規登録 #}
     {% if mode == 1 %}
         {% set readonly = ''%}
         {% set disabled = ''%}
         <form action="" method="post">
-    <!-- 詳細 #}
     {% elif mode == 2 %}
         {% set readonly = 'readonly'%}
         {% set disabled = 'disabled'%}
         <form>
-    {% 更新 #}
     {% elif mode == 3 %}
         {% set readonly = ''%}
         {% set disabled = ''%}
         <form action="" method="post">
     {% endif %}
-    {# 空ではなく、変更内容があれば更新する  %}
         <label for="name">氏名：</label>
         <input type="text" name="name" id="name" value="{{name}}" {{readonly}}>
         <label for="age">年齢：</label>
         <input type="number" name="age" id="age" value="{{age}}" {{readonly}}>
         <label for="gender">性別：</label>
-        <!-- プルダウン式 -->
         <select name="gender" {{disabled}}>
             <option value="0" {{genderSelect[0]}}></option>
             <option value="1" {{genderSelect[1]}}>男</option>
             <option value="2" {{genderSelect[2]}}>女</option>
         </select>
-        <!-- dep　t_idは表カラム -->
         <label for="dept_id">部署ID：</label>
         <select name="dept_id" {{disabled}}>
             {% for key in deptSelect.keys() %}
                  <option value="{{key}}" {{deptSelect[key]['selected']}}>{{deptSelect[key]['name']}}</option>
             {% endfor %}
+           
         </select>
-
         {# <input type="number" name="dept_id" id="dept_id" value="{{dept_id}}" {{readonly}}> #}
         {% if mode == 2 %}
             <a href="{{url_for('eUpdate',id=data.id)}}">更新</a>

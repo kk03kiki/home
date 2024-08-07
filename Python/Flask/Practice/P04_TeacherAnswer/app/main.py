@@ -2,6 +2,10 @@ from flask import flash, redirect, render_template, request, url_for
 from flask.views import MethodView
 from app import app,db,Employee,Department
 
+# Blueprintの登録
+from app.src.DepartmentManager import deptM
+app.register_blueprint(deptM)
+
 # データ一覧の表示ページ
 @app.route("/")
 def index():
@@ -10,19 +14,16 @@ def index():
     res = dbses.query(Employee).filter(Employee.del_flag == 0).all()
     return render_template("index.html",datas = res)
 
-# 新規登録処理
 class EmployeeCreate(MethodView):
     def get(self):
         # 新規登録モードでEmployeeDetail.htmlを呼び出す
         # 部署IDのSelected処理
         dbses = db.session
-        # 初期化
         deptSelect = {}
-        # departmentテーブルのレコードをクエリして変数に代入
         depts = dbses.query(Department).all()
-        # dept.idをキーとして、deptSelect辞書に作成
         for dept in depts:
             deptSelect[dept.id] = {'name':dept.name,'selected':''}
+
         return render_template("EmployeeDetail.html",mode=1,deptSelect=deptSelect)
 
     def post(self):
@@ -40,21 +41,8 @@ class EmployeeCreate(MethodView):
         # 全件表示のページへリダイレクト
         return redirect(url_for('index'))
     
-
-# 課題内容追加部分------------------------------------------------
-# 部署名変更
-app.add_url_rule("/edetail",view_func=EmployeeCreate.as_view("edetail"))
-
- # 更新[詳細]ボタンを押した先の内容
-@app.route("/detail/<id>")
-def detail(id):
-    sqlses = sql.session
-    res = sqlses.SELE
-
-# @ap　p.rou　te() の代わりに app.a　dd_url_rul　e() を使用
 app.add_url_rule("/eCreate",view_func=EmployeeCreate.as_view("eCreate"))
 
-# 更新[詳細]ボタンを押した先の内容
 @app.route("/detail/<id>")
 def detail(id):
     dbses = db.session
@@ -81,9 +69,6 @@ def detail(id):
     # 詳細モードでEmployeeDetail.htmlを呼び出す
     return render_template("EmployeeDetail.html",data=res,mode=2)
 
-
-
-# 更新完了処理（上記の変更内容で登録）
 class EmployeeUpdate(MethodView):
     def get(self,id):
         dbses = db.session
@@ -110,6 +95,7 @@ class EmployeeUpdate(MethodView):
 
         # 更新モードでEmployeeDetail.htmlを呼び出す
         return render_template("EmployeeDetail.html",data=res,mode=3)
+
     def post(self,id):
         name = request.form.get("name")
         age = request.form.get("age")
@@ -135,8 +121,6 @@ class EmployeeUpdate(MethodView):
    
 app.add_url_rule("/update/<id>",view_func=EmployeeUpdate.as_view("eUpdate"))
 
-
-# 削除ボタン
 @app.route("/delete/<id>")
 def delete(id):
     dbses = db.session

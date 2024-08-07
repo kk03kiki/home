@@ -22,7 +22,7 @@
     </div>
     <div>
         <a href="{{url_for('eCreate')}}">新規登録</a>
-        <a href="{{url_for('edetail,id=data.id')}}">部署名変更</a>
+        <a href="{{url_for('deptM.index')}}">部署管理</a>
     </div>
     {% if datas %}
         <table>
@@ -37,7 +37,6 @@
             </thead>
             <tbody>
                 {% for data in datas %}
-                <!-- ここから部署一覧バージョンを作成 -->
                     <tr>
                         <td>{{data.id}}</td>
                         <td>{{data.name}}</td>

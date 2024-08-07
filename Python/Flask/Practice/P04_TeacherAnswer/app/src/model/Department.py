@@ -6,6 +6,7 @@ class Department(db.Model):
 
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     name = db.Column(db.String(20))
+    del_flag = db.Column(db.Integer)
     
     # relationshipの第一引数はクラス名(モデル)を指定
     # relationshipのbackref引数は関連先のモデルのプロパティに追加するプロパティ名
