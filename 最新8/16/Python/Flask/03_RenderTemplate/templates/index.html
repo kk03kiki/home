@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP</title>
+</head>
+<body>
+    <h1>トップページです。</h1>
+    <ul>
+        <!-- →　（ジンジャースプレット、ジンジャーの固有名詞）書き方は二重（波かっこ） -->
+        <!-- →　url_forは関数名、()にはapp.pyの@app.route("/page")-->
+         <li><a href="{{url_for('page')}}">ページ</a></li>
+         <li><a href="{{url_for('pages',id=100)}}">ページす</a></li>
+         <li><a href="{{url_for('get',id=100)}}">GET</a></li>
+    </ul>
+    
+</body>
+</html>

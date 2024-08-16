@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    <h1>Flask-WTF：出力</h1>
+{% endblock title %}
+
+{% block content %}
+{% from "helpers/_formhelpers.html" import render_field %}
+<form method="post" novalidate>
+    <!-- csr f（クラスサイトリクエストフォージェリ） -->
+    {{form.csrf_token}}
+    {{render_field(form.name)}}
+    {{render_field(form.email)}}
+    {{render_field(form.submit)}}
+</form>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% set title = "Template Sample" %}
+{% set subTitle = "ネクストページ" %}
+{% extends 'layouts/layout.html' %}
+
+{% block head %}{% endblock %}
+
+{% block header %}
+{% include 'blocks/header.html' %}
+{% endblock %}
+{% block contents %}
+    <h2>ネクストコンテンツ</h2>
+    <p>ネクストメッセージを書いています。</p>
+{% endblock %}
+{% block footer %}
+{% include 'blocks/footer.html' %}
+
+{% endblock %}
